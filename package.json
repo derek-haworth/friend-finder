@@ -16,7 +16,7 @@
     "express",
     "node"
   ],
-  "author": "",
+  "author": "Derek Haworth",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/derek-haworth/friend-finder/issues"
