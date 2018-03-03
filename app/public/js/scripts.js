@@ -12,11 +12,14 @@ function createQuestions() {
 	let questionArray = [ q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 ];
 	return questionArray;
 }
+
 var questions = createQuestions();
+
 $( "#questionDiv" ).append( '<div class="row"><div class="col-lg-12">' );
 for ( var i = 0; i < questions.length; i++ ) {
 	$( "#questionDiv" ).append( '<h3>Question ' + ( i + 1 ) + '</h3>' + '<p>' + questions[ i ] + '</p>' + '<select class="chosen-select dropList" id="q' + i + '">' + '<option value=""></option>' + '<option value="1">1 (Strongly Disagree)</option>' + '<option value="2">2</option>' + '<option value="3">3</option>' + '<option value="4">4</option>' + '<option value="5">5 (Strongly Agree)</option>' + '</select>' );
 }
+
 $( "#questionDiv" ).append( '<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>' + '</div></div>' );
 // Chosen Dropdown Setup
 var config = {
@@ -34,9 +37,13 @@ var config = {
 		width: "95%"
 	}
 };
+
+
 for ( var selector in config ) {
 	$( selector ).chosen( config[ selector ] );
 }
+
+
 // User clicks the submit button
 $( "#submitButton" ).on( "click", function( event ) {
 	// Don't reload the page
@@ -96,6 +103,6 @@ $( "#submitButton" ).on( "click", function( event ) {
 	}
 	// If the user validation failed
 	else {
-		alert( "Please answer all of the questions correctly!" );
+		alert( "Oops! Looks like you missed a question" );
 	}
-} );
+});
