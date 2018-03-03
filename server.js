@@ -3,6 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var fs = require('fs');
 
 // Sets up the Express App
 // =============================================================
@@ -18,8 +19,8 @@ app.use(express.static('app/public'));
 
 
 // Router
-require('./app/routing/apiRoutes.js')(app);
-require('./app/routing/htmlRoutes.js')(app);
+require('./app/routing/apiRoutes.js')(app, path);
+require('./app/routing/htmlRoutes.js')(app, path);
 
 
 app.listen(PORT, function() {
